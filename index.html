@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haneen · Psychology PhD</title>
+<meta name="description" content="Haneen — PhD candidate in psychology at the University of Queensland. Research on misperceptions, empathy, corrections, connection and AI. Tutor and poet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   COLOURS — pulled from the desk photo: tomato wall, bottle-green
+   lamp, pinboard green, warm wood. Change them here.
+   ============================================================ */
+:root{
+  --bg:#f3ede2; --surface:#fbf8f1; --ink:#1d241c; --muted:#5e6458; --line:#dcd2bf;
+  --tomato:#d2432a; --forest:#1f3a2a; --moss:#56704a; --ochre:#b9822c;
+  --sage:#bccaa8; --sand:#e9d6ad; --clay:#e6b49b; --fern:#cfdcc0;
+  --deep:#17261c; --on-dark:#f1ece0; --on-dark-muted:#b4bba9;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101510; --surface:#182019; --ink:#ece6d8; --muted:#9ba292; --line:#2a3429;
+    --tomato:#ec6447; --forest:#9cc29a; --moss:#8fae7f; --ochre:#e0a94d;
+    --deep:#0b110c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101510; --surface:#182019; --ink:#ece6d8; --muted:#9ba292; --line:#2a3429;
+  --tomato:#ec6447; --forest:#9cc29a; --moss:#8fae7f; --ochre:#e0a94d;
+  --deep:#0b110c;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 "Bricolage Grotesque",system-ui,sans-serif;font-optical-sizing:auto;overflow-x:hidden;transition:background .5s,color .5s}
+h1,h2,h3{font-weight:700;line-height:1.02;letter-spacing:-.025em}
+em,.serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+section{padding:110px 0}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tomato);margin-bottom:18px}
+.kicker::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+h2{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:22px}
+h2 em{color:var(--tomato)}
+.lede{max-width:600px;color:var(--muted);font-size:1.08rem}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;border:1.5px solid currentColor;background:none;font-weight:600;font-size:.92rem;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid{background:var(--tomato);border-color:var(--tomato);color:#fff}
+.btn.solid:hover{background:var(--on-dark);border-color:var(--on-dark);color:var(--deep)}
+
+/* ---------- top bar ---------- */
+.bar{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s,box-shadow .3s,color .3s;color:var(--on-dark)}
+.bar.scrolled{background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);color:var(--ink)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.bar .logo{font-family:"Instrument Serif",serif;font-size:1.6rem;text-decoration:none}
+.bar nav{display:flex;gap:26px;font-size:.88rem;font-weight:500}
+.bar nav a{text-decoration:none;opacity:.8}
+.bar nav a:hover{opacity:1;color:var(--tomato)}
+.lights{background:none;border:1.5px solid currentColor;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lights svg{width:18px;height:18px}
+@media (max-width:860px){.bar nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--deep);color:var(--on-dark);padding:120px 0 90px}
+.hero-top{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
+.hero h1{font-size:clamp(3.6rem,12vw,9rem);font-weight:800;letter-spacing:-.045em;line-height:.88}
+.hero h1 em{color:var(--tomato);font-size:.9em}
+.hero .role{margin-top:20px;font-size:1.05rem;color:var(--on-dark-muted)}
+.curious{font-size:clamp(1.3rem,2.8vw,1.9rem);line-height:1.3;font-weight:500;letter-spacing:-.01em}
+.curious .label{display:block;font-size:.76rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:10px}
+.rotator{font-family:"Instrument Serif",serif;font-style:italic;color:var(--sand);display:inline-block;transition:opacity .35s,transform .35s}
+.rotator.out{opacity:0;transform:translateY(8px)}
+@media (max-width:820px){.hero-top{grid-template-columns:1fr;gap:28px}}
+
+/* desk photo with hotspots */
+.desk{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:#222 url("images/hero.jpg") center/cover no-repeat}
+.desk img{width:100%;height:100%;object-fit:cover;filter:brightness(.16) saturate(.5);transition:filter 1.1s ease}
+.desk .glow{position:absolute;inset:0;pointer-events:none;opacity:.7;transition:opacity 1.1s;background:radial-gradient(circle at 82% 42%,rgba(150,230,110,.35),rgba(150,230,110,.08) 10%,transparent 22%);mix-blend-mode:screen}
+.desk.on img{filter:none}
+.desk.on .glow{opacity:0}
+/* lamp-off state: only the lamp dot shows, with its label always visible */
+.desk:not(.on) .spot:not([data-lamp]){opacity:0;pointer-events:none;transform:scale(.4)}
+.desk .spot:not([data-lamp]){transition:opacity .5s,transform .5s}
+.desk.on .spot:nth-of-type(2){transition-delay:.5s}.desk.on .spot:nth-of-type(3){transition-delay:.65s}.desk.on .spot:nth-of-type(4){transition-delay:.8s}.desk.on .spot:nth-of-type(5){transition-delay:.95s}.desk.on .spot:nth-of-type(6){transition-delay:1.1s}
+.desk:not(.on) .spot[data-lamp] span{opacity:1;transform:translateX(-50%)}
+.desk:not(.on) .spot[data-lamp]{box-shadow:0 0 0 0 rgba(241,236,224,.7);animation:pulse 1.6s infinite}
+.spot{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:none;background:rgba(241,236,224,.95);cursor:pointer;box-shadow:0 0 0 0 rgba(241,236,224,.6);animation:pulse 2.4s infinite}
+.spot::after{content:"";position:absolute;inset:10px;border-radius:50%;background:var(--tomato)}
+.spot span{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(4px);white-space:nowrap;background:var(--on-dark);color:var(--deep);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.spot:hover span,.spot:focus-visible span,.shelf .spot:focus span{opacity:1;transform:translateX(-50%)}
+.spot:nth-of-type(2){animation-delay:.5s}.spot:nth-of-type(3){animation-delay:1s}.spot:nth-of-type(4){animation-delay:1.5s}.spot:nth-of-type(5){animation-delay:2s}
+@keyframes pulse{70%{box-shadow:0 0 0 14px rgba(241,236,224,0)}100%{box-shadow:0 0 0 0 rgba(241,236,224,0)}}
+.desk-caption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:.88rem;color:var(--on-dark-muted)}
+.desk-caption em{color:var(--on-dark)}
+@media (max-width:620px){.spot{width:24px;height:24px;margin:-12px 0 0 -12px}.spot::after{inset:8px}}
+
+/* ---------- shared section headings (plain, no kicker) ---------- */
+.sec-h{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.035em;line-height:.95;margin-bottom:26px}
+.prose{font-family:"Newsreader",Georgia,serif;font-size:1.22rem;line-height:1.6;font-weight:400}
+.prose p+p{margin-top:16px}
+.prose a{color:var(--tomato);text-underline-offset:3px}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start}
+.about .collab{margin-top:22px;font-family:"Bricolage Grotesque",sans-serif;font-size:1rem;font-weight:600}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:10px}}
+
+/* path so far: a real winding trail */
+.trail-wrap{margin-top:80px;padding-bottom:110px}
+.trail-wrap h3{font-size:1.4rem;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.trail-wrap .hint{font-family:"Newsreader",serif;font-style:italic;color:var(--muted)}
+.trail{position:relative;max-width:900px;margin:100px auto 0;aspect-ratio:1000/300}
+.trail svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.trail .ghost{stroke:var(--line);stroke-width:3;stroke-dasharray:2 10;stroke-linecap:round;fill:none}
+.trail .walked{stroke:var(--tomato);stroke-width:3;stroke-linecap:round;fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.6s cubic-bezier(.45,.05,.3,1)}
+.trail.in .walked{stroke-dashoffset:0}
+.trail .ahead{stroke:var(--muted);stroke-width:2;stroke-dasharray:1 9;stroke-linecap:round;fill:none;opacity:.6}
+.stop{position:absolute;left:var(--x);top:var(--y);width:0;height:0}
+.stop .dot{position:absolute;left:-9px;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--ink);opacity:0;transform:scale(.3);transition:opacity .4s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+.trail.in .stop .dot{opacity:1;transform:none}
+.trail.in .stop:nth-of-type(1) .dot{transition-delay:.3s}.trail.in .stop:nth-of-type(2) .dot{transition-delay:1.2s}.trail.in .stop:nth-of-type(3) .dot{transition-delay:2.3s}
+.stop.now .dot{background:var(--tomato);border-color:var(--tomato);animation:here 2s 3s infinite}
+@keyframes here{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--tomato) 50%,transparent)}70%{box-shadow:0 0 0 14px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.stop .lbl{position:absolute;left:-105px;width:210px;text-align:center}
+.stop.below .lbl{top:20px}
+.stop.above .lbl{bottom:20px}
+.stop .when{display:block;font-family:"Newsreader",serif;font-style:italic;color:var(--tomato);font-size:.98rem}
+.stop b{display:block;font-weight:700;font-size:.92rem;line-height:1.25;margin:2px 0 4px}
+.stop .sub{display:block;font-family:"Newsreader",serif;color:var(--muted);font-size:.9rem;line-height:1.4}
+.stop.end .lbl{left:-50px;width:100px;font-family:"Newsreader",serif;font-style:italic;color:var(--muted)}
+@media (max-width:900px){
+  .trail-wrap{padding-bottom:0}
+  .trail{aspect-ratio:auto;max-width:none;margin:40px 0 20px 12px;padding-left:34px;border-left:3px dashed var(--line)}
+  .trail svg{display:none}
+  .stop{position:relative;left:auto;top:auto;width:auto;height:auto;margin-bottom:34px}
+  .stop .dot{left:-45px;top:3px}
+  .stop .lbl,.stop.end .lbl{position:static;width:auto;text-align:left}
+  .stop.end{margin-bottom:0}
+}
+
+/* ---------- research: editorial list ---------- */
+.research{background:var(--deep);color:var(--on-dark)}
+.research-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
+.research-head .prose{color:var(--on-dark-muted);font-size:1.15rem}
+@media (max-width:860px){.research-head{grid-template-columns:1fr;gap:0}}
+.proj{border-top:1px solid rgba(241,236,224,.18)}
+.proj:last-child{border-bottom:1px solid rgba(241,236,224,.18)}
+.proj summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:70px 1fr auto;gap:24px;align-items:baseline;padding:30px 0}
+.proj summary::-webkit-details-marker{display:none}
+.proj .n{font-family:"Newsreader",serif;font-style:italic;font-size:1.3rem;color:var(--sand)}
+.proj h3{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.proj .short{display:block;font-family:"Newsreader",serif;font-weight:400;font-size:1.1rem;letter-spacing:0;color:var(--on-dark-muted);margin-top:8px;line-height:1.45}
+.proj .role{font-size:.78rem;font-weight:600;color:var(--sand);white-space:nowrap;display:flex;align-items:center;gap:14px}
+.proj .role::after{content:"+";font-size:1.6rem;font-weight:300;color:var(--on-dark);transition:transform .3s}
+.proj[open] .role::after{transform:rotate(45deg)}
+.proj summary:hover h3{color:var(--sand)}
+.proj .body{display:grid;grid-template-columns:70px 1fr;gap:24px;padding:0 0 34px}
+.proj .body .prose{grid-column:2;max-width:760px;font-size:1.12rem;color:var(--on-dark)}
+.proj .methods{grid-column:2;margin-top:16px;font-size:.88rem;color:var(--on-dark-muted)}
+.proj .methods b{color:var(--on-dark);font-weight:600}
+@media (max-width:640px){.proj summary{grid-template-columns:1fr auto;gap:12px}.proj .n{display:none}.proj .body{grid-template-columns:1fr}.proj .body .prose,.proj .methods{grid-column:1}.proj .role{font-size:0}.proj .role::after{font-size:1.6rem}}
+
+/* ---------- tutoring ---------- */
+.pull{font-family:"Newsreader",serif;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.25;font-weight:400;max-width:900px;margin:10px 0 60px;text-wrap:balance}
+.pull mark{background:linear-gradient(transparent 62%,color-mix(in srgb,var(--sand) 80%,transparent) 62%);color:inherit;padding:0 2px}
+.courses{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+.course{border-top:3px solid var(--ink);padding-top:16px}
+.course .code{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--tomato)}
+.course b{display:block;font-weight:700;font-size:1.05rem;line-height:1.25;margin:8px 0 4px}
+.course .lvl{display:block;font-size:.8rem;color:var(--moss);font-weight:600;margin-bottom:10px}
+.course p{font-family:"Newsreader",serif;font-size:1.02rem;line-height:1.5;color:var(--muted)}
+@media (max-width:960px){.courses{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.courses{grid-template-columns:1fr}}
+
+/* ---------- conferences: tickets ---------- */
+.conf-section{padding-top:30px}
+.tickets{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px;margin-top:46px;align-items:start}
+@media (max-width:420px){.tickets{grid-template-columns:1fr}}
+.ticket{display:grid;grid-template-columns:1fr 70px;border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:0 1px 0 var(--line),0 14px 34px rgba(29,36,28,.1);transition:transform .25s}
+.ticket:hover{transform:translateY(-4px) rotate(-.4deg)}
+.ticket .main{padding:22px 22px 24px;display:flex;flex-direction:column;gap:4px}
+.ticket .top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}
+.ticket .soon{color:#fff;background:var(--ochre);border-radius:999px;padding:3px 9px;letter-spacing:.12em}
+.route{display:flex;align-items:center;gap:12px;margin:14px 0 2px}
+.route b{font-size:2.2rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.route .line{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--muted) 0 6px,transparent 6px 12px);position:relative}
+.route .line::after{content:"✈";position:absolute;right:-4px;top:-13px;font-size:1rem;color:var(--tomato)}
+.route .bridge{flex:1;height:38px;color:var(--moss)}
+.cities{display:flex;justify-content:space-between;font-size:.76rem;color:var(--muted);margin-bottom:14px}
+.ticket .event{font-weight:700;font-size:1.12rem;line-height:1.25}
+.ticket .title{font-family:"Instrument Serif",serif;font-style:italic;font-size:1.15rem;line-height:1.35;color:var(--ink);margin-top:4px}
+.ticket .blurb{font-size:.9rem;color:var(--muted);margin-top:6px;line-height:1.55}
+.ticket .high{margin-top:8px;font-size:.88rem;line-height:1.5;padding:10px 12px;border-radius:8px;background:color-mix(in srgb,var(--sand) 45%,transparent)}
+.ticket .high::before{content:"★ ";color:var(--tomato)}
+.ticket .meta{display:flex;gap:22px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.ticket .meta b{display:block;color:var(--ink);font-size:.82rem;letter-spacing:.02em}
+.stub{border-left:2px dashed var(--line);background:var(--tomato);color:#fff;display:flex;align-items:center;justify-content:center;position:relative}
+.ticket.home .stub{background:var(--forest)}
+html[data-theme="dark"] .ticket.home .stub{background:#2f5a3d}
+@media (prefers-color-scheme: dark){html:not([data-theme="light"]) .ticket.home .stub{background:#2f5a3d}}
+.stub::before,.stub::after{content:"";position:absolute;left:-10px;width:18px;height:18px;border-radius:50%;background:var(--bg)}
+.stub::before{top:-9px}.stub::after{bottom:-9px}
+.stub span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+
+/* image placeholder */
+.ph{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--moss) 14%,var(--surface)) 0 10px,var(--surface) 10px 20px);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.72rem;text-align:center;padding:6px;overflow:hidden;width:100%;height:100%;min-height:0}
+.ph.has-img{padding:0;background:#000;cursor:zoom-in}
+.ph img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- poetry: the other side of the desk ---------- */
+.poetry-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:center}
+.shelf{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:#1b1712}
+.shelf img{width:100%;height:100%;object-fit:cover}
+.shelf .spot{animation-duration:3s}
+.shelf-cap{margin-top:14px;font-family:"Newsreader",serif;font-style:italic;color:var(--muted);font-size:1rem}
+.note{margin-top:28px;padding:18px 20px;border-left:3px solid var(--tomato);background:color-mix(in srgb,var(--sand) 35%,transparent);font-size:.98rem}
+.note b{font-weight:700}
+.textlink{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--tomato);padding-bottom:3px}
+.textlink:hover{color:var(--tomato)}
+@media (max-width:860px){.poetry-grid{grid-template-columns:1fr;gap:40px}.shelf{max-width:520px}}
+
+/* ---------- away from the desk ---------- */
+.away{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#1c3f4a,#0f2a33);color:var(--on-dark);position:relative}
+.away .txt{padding:56px 48px}
+.away h2{font-size:clamp(2rem,4.4vw,3rem)}
+.away h2 em{color:#a8d4d8}
+.away p{color:#bcd0d2;max-width:440px}
+.away .btn{margin-top:28px;color:var(--on-dark)}
+.away .btn:hover{background:var(--on-dark);color:#0f2a33;border-color:var(--on-dark)}
+.away .peek{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:4px;min-height:320px}
+.away .peek .ph{border-radius:0;background:rgba(255,255,255,.06);color:#9fbcc0}
+.away .peek .ph{position:relative;min-height:0}
+.away .peek .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.away .peek .ph:hover img{transform:scale(1.05)}
+.away svg.waves{position:absolute;left:0;bottom:0;width:200%;height:36px;opacity:.18;animation:drift 9s linear infinite;pointer-events:none}
+@keyframes drift{to{transform:translateX(-50%)}}
+@media (max-width:860px){.away{grid-template-columns:1fr}.away .txt{padding:40px 26px}.away .peek{min-height:240px}}
+
+/* ---------- contact ---------- */
+.contact{padding-bottom:90px}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start}
+.contact .prose{color:var(--muted);font-size:1.15rem;max-width:380px}
+.links{border-top:1.5px solid var(--ink)}
+.links a{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:color .2s,padding .2s}
+.links a:hover{color:var(--tomato);padding-left:8px}
+.links .k{font-size:.85rem;color:var(--muted);font-weight:600}
+.links .v{font-weight:700;font-size:1.1rem;overflow-wrap:anywhere}
+.links .arr{transition:transform .2s}
+.links a:hover .arr{transform:translateX(4px)}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:20px}}
+@media (max-width:520px){.links a{grid-template-columns:1fr auto}.links .k{grid-column:1/-1;margin-bottom:-12px}}
+footer{padding:34px 0;text-align:center;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line)}
+
+/* ---------- whale gallery ---------- */
+.ocean{position:fixed;inset:0;z-index:60;background:linear-gradient(180deg,#123540 0%,#0a1f26 100%);display:none;overflow:auto;color:var(--on-dark)}
+.ocean.open{display:block}
+.ocean-inner{max-width:1160px;margin:0 auto;padding:80px 16px 120px}
+.ocean h3{font-size:clamp(2.2rem,5vw,3.4rem)}
+.ocean h3 em{color:#a8d4d8}
+.ocean .sub{color:#a9c3c8;margin:8px 0 36px}
+.ocean .close{position:fixed;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--on-dark);background:rgba(10,31,38,.6);color:var(--on-dark);font-size:1.3rem;cursor:pointer;z-index:2}
+.pod{columns:3 260px;column-gap:14px}
+.pod figure{break-inside:avoid;margin-bottom:14px;opacity:0;transform:translateY(80px)}
+.ocean.open .pod figure{animation:surface .9s cubic-bezier(.2,.9,.3,1) forwards}
+@keyframes surface{to{opacity:1;transform:none}}
+.pod .ph{height:auto;aspect-ratio:4/3;border-radius:8px;background:rgba(255,255,255,.06);color:#a9c3c8}
+.pod .ph.has-img{aspect-ratio:auto}
+.pod .ph.has-img img{height:auto}
+.pod figcaption{font-size:.82rem;color:#a9c3c8;margin-top:6px}
+.lightbox{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-height:90vh;border-radius:6px}
+
+.rise{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rise{opacity:1;transform:none;transition:none}
+  .pod figure,.ocean.open .pod figure{opacity:1;transform:none;animation:none}
+  .spot,.away svg.waves{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="bar" id="bar">
+  <div class="wrap">
+    <a href="#top" class="logo">Haneen</a>
+    <nav>
+      <a href="#about">About</a><a href="#research">Research</a><a href="#teaching">Tutoring</a>
+      <a href="#conferences">Conferences</a><a href="#poetry">Poetry</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="lights" id="lights" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 10h16l-3-5H7z"/><path d="M12 10v8M8 20h8"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <h1>Haneen<em>.</em></h1>
+        <p class="role">PhD candidate in psychology · The University of Queensland</p>
+      </div>
+      <p class="curious" aria-live="polite">
+        <span class="label">Lately</span>
+        I'm curious about <span class="rotator" id="rotator">how we come to care for strangers</span>
+      </p>
+    </div>
+
+    <div class="desk" id="desk">
+      <img src="images/hero.jpg" alt="Haneen's desk: two monitors, a green banker's lamp, a pinboard with whale drawings and photos, and a shelf of books against a red wall.">
+      <div class="glow"></div>
+      <!-- Hotspots: left/top are percentages of the photo. Nudge them if you change the photo. -->
+      <button class="spot" style="left:82%;top:41%" data-lamp aria-label="Switch the desk lamp on or off" aria-pressed="false"><span id="lampLabel">Switch on the lamp</span></button>
+      <button class="spot" style="left:41%;top:44%" data-go="research" aria-label="The screens: my research"><span>On the screens: my research</span></button>
+      <button class="spot" style="left:52%;top:26%" data-whales aria-label="The whale drawings: see my whale photos"><span>Whales on the pinboard</span></button>
+      <button class="spot" style="left:15%;top:71%" data-go="poetry" aria-label="The stack of books: my poetry"><span>The book stack: poems</span></button>
+      <button class="spot" style="left:27%;top:79%" data-go="teaching" aria-label="The notebook: tutoring"><span>The notebook: tutoring</span></button>
+      <button class="spot" style="left:6%;top:56%" data-go="about" aria-label="The bookshelf: about me"><span>The bookshelf: about me</span></button>
+    </div>
+    <div class="desk-caption">
+      <span>This is my actual desk. <em id="deskHint">It's a bit dark in here. Try the lamp.</em></span>
+      <span>Brisbane, Australia</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap rise">
+    <div class="about">
+      <h2 class="sec-h">Hi, I'm Haneen.</h2>
+      <div class="prose">
+        <p>I'm a PhD candidate in the School of Psychology at the University of Queensland, supervised by Professor Eric Vanman and Dr Leah Henrickson. I'm interested in social psychology and cognition: how what we know may shape how we feel.</p>
+        <p>I also tutor undergraduate psychology at UQ, and I write poetry. My first collection is on its way.</p>
+        <p>When I'm not at my desk at uni, I dabble in running, attempt whatever creative project I've found on Pinterest that week, and write poems whenever something moves me.</p>
+        <p class="collab">Always open to collaborations. <a href="#contact">Get in touch →</a></p>
+      </div>
+    </div>
+
+    <div class="trail-wrap">
+      <h3>Path so far</h3>
+      <p class="hint">Not quite a straight line.</p>
+      <div class="trail" id="trail">
+        <svg viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true">
+          <path class="ghost" d="M30 250 C100 250 120 210 180 210 C300 210 360 90 490 90 C620 90 680 200 780 200"/>
+          <path class="walked" pathLength="1" d="M30 250 C100 250 120 210 180 210 C300 210 360 90 490 90 C620 90 680 200 780 200"/>
+          <path class="ahead" d="M780 200 C850 200 890 140 930 120"/>
+        </svg>
+        <div id="stops"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESEARCH ================= -->
+<section class="research" id="research">
+  <div class="wrap rise">
+    <div class="research-head">
+      <h2 class="sec-h" style="margin:0">Research</h2>
+      <div class="prose"><p>My projects look at how beliefs, emotions and technology shape the way we relate to one another. Open any of them for more.</p></div>
+    </div>
+    <div id="projects"></div>
+  </div>
+</section>
+
+<!-- ================= TEACHING ================= -->
+<section id="teaching">
+  <div class="wrap rise">
+    <h2 class="sec-h">Academic tutoring</h2>
+    <p class="pull">I get to engage with students in the ways I would have loved: making classes feel <mark>inclusive, fun, and like everyone is smart enough to have a go.</mark></p>
+    <div class="courses" id="units"></div>
+  </div>
+</section>
+
+<!-- ================= CONFERENCES ================= -->
+<section class="conf-section" id="conferences">
+  <div class="wrap rise">
+    <h2 class="sec-h">Conferences!</h2>
+    <div class="prose" style="color:var(--muted);max-width:620px"><p>A boarding pass for each trip, and a little Story Bridge for the ones at home in Brisbane.</p></div>
+    <div class="tickets" id="tickets"></div>
+  </div>
+</section>
+
+<!-- ================= POETRY ================= -->
+<section id="poetry">
+  <div class="wrap poetry-grid rise">
+    <div>
+      <div class="shelf" id="shelf">
+        <img src="images/shelf.jpg" alt="The other side of Haneen's desk: a bookshelf with Klara and the Sun, books on writing, a stack of poetry, paper cranes, a toy camel, a duck and a ceramic whale.">
+      </div>
+      <p class="shelf-cap">The other side of my desk.</p>
+    </div>
+    <div>
+      <h2 class="sec-h">Poetry</h2>
+      <div class="prose">
+        <p>I write about the grandness in unremarkable things. My poems are shaped deeply by world events, and by the necessity to care, even when it's uncomfortable.</p>
+        <p>I try to bring depth into everyday language, so that everyone can take something from my writing. My work has resonated with UNICEF, Penguin, and a range of artists, prominent chefs, activists and singers.</p>
+      </div>
+      <p class="note"><b>In progress:</b> I'm self-publishing my first collection.</p>
+      <a class="textlink" href="https://www.instagram.com/haneens.ao/" target="_blank" rel="noopener">Read my poems on Instagram @haneens.ao →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHALES ================= -->
+<section id="away" style="padding-bottom:40px">
+  <div class="wrap rise">
+    <div class="away">
+      <div class="txt">
+        <h2>I love <em>whales</em>.</h2>
+        <p>Every year, thousands of humpbacks travel up the east coast from Antarctica to breed and give birth in the warm waters off Queensland, then head back south with their calves. Brisbane sits right on that route, so from around June to November the bay and the coast nearby are full of them.</p>
+        <p style="margin-top:12px">A recent drone purchase opened up a whole new way of seeing them. Watching a pod glide beneath the surface from above still gives me a thrill every time.</p>
+        <button class="btn" id="openOcean">See my whale photos ↑</button>
+      </div>
+      <div class="peek" id="peek"></div>
+      <svg class="waves" viewBox="0 0 800 36" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 Q50 0 100 18 T200 18 T300 18 T400 18 T500 18 T600 18 T700 18 T800 18 V36 H0Z" fill="#fff"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap rise contact-grid">
+    <div>
+      <h2 class="sec-h">Say hello.</h2>
+      <div class="prose"><p>Open to collaborations, and happy to talk research or poetry. Use my UQ email for academic things and my writing email for poetry.</p></div>
+    </div>
+    <div class="links" id="links"></div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Haneen · School of Psychology, The University of Queensland</footer>
+
+<!-- ================= OVERLAYS ================= -->
+<div class="ocean" id="ocean" role="dialog" aria-modal="true" aria-labelledby="oceanTitle">
+  <button class="close" id="closeOcean" aria-label="Close">×</button>
+  <div class="ocean-inner">
+    <h3 id="oceanTitle">The <em>whales</em></h3>
+    <p class="sub">Humpbacks on their migration along the Queensland coast, from the boat and from above. Tap a photo to enlarge.</p>
+    <div class="pod" id="pod"></div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script>
+/* ============================================================
+   EDIT YOUR CONTENT HERE — everything below the line is code
+   ============================================================ */
+
+// "Lately I'm curious about ___" — rotates slowly in the header
+const CURIOUS = [
+  "why some beliefs are hard to let go of",
+  "how corrections work, and when they don't",
+  "how to communicate ideas better",
+  "how AI is changing the way we think",
+  "what makes a line of poetry land"
+];
+
+// About → "Path so far": three stops along a winding path, then "what's next?"
+const PATH = [
+  { when: "Where I started", title: "Veterinary technology & biomedical science", sub: "A few years in the sciences before psychology finally clicked" },
+  { when: "Then", title: "Bachelor of Psychological Science (Honours, First Class)", sub: "Honours on cognitive pathways to expertise in facial recognition" },
+  { when: "Now", title: "PhD candidate, The University of Queensland", sub: "Also an academic tutor and research assistant" }
+];
+
+// Research projects. `short` shows in the list; `text` shows when opened.
+const RESEARCH = [
+  { title: "Misperceptions, empathy & corrections", role: "PhD",
+    short: "How misperceptions about social groups shape empathy, and whether corrections can undo the damage.",
+    text: "My doctoral research examines how misperceptions about social groups shape empathic responding toward their members, and whether corrections change those responses. Early findings indicate a relational harm that goes beyond knowledge alone. From this I've developed a dual-harm framework for false beliefs about social groups: epistemic harm, where what we know about a group is distorted, and relational harm, where empathic concern toward that group is suppressed. The framework draws on appraisal theories of empathy and the continued influence effect.",
+    methods: "Experiments, mixed-effects models, theory building" },
+  { title: "Can AI correction restore empathy?", role: "PhD · my design",
+    short: "Testing whether AI-tailored correction can restore empathy toward refugees, migrants and asylum seekers.",
+    text: "A PhD study I designed with my supervisors. When false beliefs about refugees, migrants and asylum seekers become entrenched, they can shape who is seen as threatening or undeserving of concern, suppressing empathy even where facts can be corrected. Correction research has become good at changing beliefs, and intergroup research has long tied empathy to prejudice reduction, yet little work asks whether correcting false beliefs can restore empathic concern. This experiment compares an AI-assisted, belief-tailored dialogue (building on Costello et al., 2024) with a static best-practice correction (Moore-Berg et al., 2022), both paired with the same humanising video. It tests whether personalised correction can address both the epistemic and the relational harm, and what drives any difference.",
+    methods: "Experimental design, LLM-delivered dialogue, intergroup empathy measures" },
+  { title: "Conspiracy theories & connectedness", role: "Co-author",
+    short: "Do conspiracy beliefs erode social connection, or does disconnection come first?",
+    text: "A longitudinal study on beliefs and social connection. Using random-intercept cross-lagged panel models (RI-CLPM), it separates stable between-person differences from within-person change, asking whether conspiracy beliefs erode social connectedness, or whether disconnection comes first. This was the first paper I had the opportunity to collaborate on: I contributed to its conceptual ideas, wrote the introduction, and helped edit the manuscript.",
+    methods: "Longitudinal panel data, RI-CLPM" },
+  { title: "Student AI use & ownership of knowledge", role: "Research assistant",
+    short: "How students use AI in their learning, and whether they still feel ownership of what they know.",
+    text: "As a research assistant, I work on a project examining how university students use AI tools in their learning, and whether they retain a sense of epistemic ownership over what they know. My role covers participant recruitment and data organisation.",
+    methods: "Recruitment, data management" }
+];
+
+// Teaching
+const UNITS = [
+  { code: "PSYC2371", name: "The Science of Everyday Thinking", level: "Second-year elective",
+    about: "How to think critically about the claims we meet every day: weighing evidence, recognising biases and reasoning more clearly." },
+  { code: "PSYC3052", name: "Judgement and Decision-Making", level: "Third-year elective",
+    about: "How people make choices under uncertainty, and the heuristics and biases that shape everyday judgements." },
+  { code: "PSYC3282", name: "Developmental Perspectives on the Origins of Human Culture", level: "Third-year elective",
+    about: "How distinctly human capacities like cooperation, teaching and culture emerge across development." },
+  { code: "PSYC1030", name: "Developmental, Social & Clinical Psychology", level: "First-year core course",
+    about: "A first look at how people grow, relate to one another, and experience mental health." }
+];
+
+// Conferences, oldest first. For Brisbane ones set home: true (no flight).
+// highlight can be one line or a list of lines in [ ].
+// month is 1–12; anything in the future gets an "Upcoming" tag automatically.
+const CONFERENCES = [
+  { home: true, city: "Brisbane", venue: "The University of Queensland",
+    event: "Unfamiliar Face Identification Conference", year: 2024, month: 2, type: "Talk",
+    title: "The Fast and Featural Test: Assessing Cognitive Pathways to Expertise in Facial Recognition",
+    about: "My honours project, comparing the facial recognition skills of forensic facial examiners and super-recognisers from around the world.",
+    highlight: "My first ever conference presentation." },
+  { home: true, city: "Brisbane",
+    event: "International Society for Research on Emotion (ISRE)", year: 2026, month: 7, type: "Talk",
+    title: "The dual-harm framework of false beliefs",
+    about: "Introducing my framework for the epistemic and relational harms of false beliefs about social groups.",
+    highlight: ["My first conference talk on my PhD, to a room that included Dr Katherine Aumer and Ronald de Sousa, who both complimented the work.",
+                "I also designed the conference stickers!"] },
+  { from: "BNE", to: "CHC", fromCity: "Brisbane", toCity: "Christchurch, NZ",
+    event: "Society of Australasian Social Psychologists (SASP)", year: 2026, month: 11, type: "Talk",
+    title: "Misperceptions about social groups and empathy toward them: A correlational study and some intervention results",
+    about: "",
+    highlight: "" }
+];
+
+// Whale photos — put files in images/whales/ (the first four also preview on the page)
+const WHALES = [
+  { src: "images/whales/whale1.jpg", caption: "Tail up, with company" },
+  { src: "images/whales/whale3.jpg", caption: "Surfacing in the last light" },
+  { src: "images/whales/whale2.jpg", caption: "A pod from above" },
+  { src: "images/whales/whale4.jpg", caption: "Mid-breach" },
+  { src: "images/whales/whale5.jpg", caption: "Gliding beneath the surface" },
+  { src: "images/whales/whale6.jpg", caption: "A fluke on the horizon at dusk" },
+  { src: "images/whales/whale7.jpg", caption: "A fin raised at dusk" }
+];
+
+// Links — paste your real Google Scholar and LinkedIn URLs
+const LINKS = [
+  { label: "Academic email", value: "h.abuobeid@uq.edu.au",     url: "mailto:h.abuobeid@uq.edu.au" },
+  { label: "Writing email",  value: "haneenswriting@gmail.com", url: "mailto:haneenswriting@gmail.com" },
+  { label: "Publications",   value: "Google Scholar", url: "https://scholar.google.com/" },
+  { label: "Professional",   value: "LinkedIn",       url: "https://www.linkedin.com/" },
+  { label: "Poetry",         value: "@haneens.ao",    url: "https://www.instagram.com/haneens.ao/" }
+];
+
+/* ============================================================ */
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const go = id => document.getElementById(id).scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+$('yr').textContent = new Date().getFullYear();
+
+// top bar
+const bar = $('bar');
+const onScroll = () => bar.classList.toggle('scrolled', scrollY > 80);
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+// "I'm curious about…"
+(function(){
+  const el = $('rotator'); let i = 0;
+  el.textContent = CURIOUS[0];
+  if (reduce || CURIOUS.length < 2) return;
+  setInterval(() => {
+    el.classList.add('out');
+    setTimeout(() => { i = (i + 1) % CURIOUS.length; el.textContent = CURIOUS[i]; el.classList.remove('out'); }, 350);
+  }, 3600);
+})();
+
+// image helper: photo if present, labelled placeholder if missing
+function fillPh(el, src, alt, zoom = true){
+  const img = new Image(); img.alt = alt || ''; img.decoding = 'async';
+  img.onload = () => { el.textContent = ''; el.classList.add('has-img'); el.appendChild(img); };
+  img.onerror = () => { el.textContent = src.split('/').pop(); };
+  img.src = src;
+  if (zoom) el.addEventListener('click', e => { if (el.classList.contains('has-img')) { e.stopPropagation(); openLightbox(src, alt); } });
+}
+document.querySelectorAll('.ph[data-src]').forEach(el => fillPh(el, el.dataset.src, el.dataset.alt));
+
+// path so far: stops along the trail (positions match the SVG curve)
+const STOP_POS = [{x:"18%", y:"70%", side:"below"}, {x:"49%", y:"30%", side:"above"}, {x:"78%", y:"66.7%", side:"below"}];
+$('stops').innerHTML = PATH.slice(0, 3).map((p, i) => {
+  const pos = STOP_POS[i], now = i === PATH.length - 1 || i === 2;
+  return `<div class="stop ${pos.side}${now ? ' now' : ''}" style="--x:${pos.x};--y:${pos.y}"><span class="dot"></span><div class="lbl"><span class="when">${esc(p.when)}</span><b>${esc(p.title)}</b><span class="sub">${esc(p.sub)}</span></div></div>`;
+}).join('') + `<div class="stop end above" style="--x:93%;--y:40%"><div class="lbl">what's next?</div></div>`;
+const trailIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); trailIO.unobserve(e.target); } }), {threshold:.4});
+trailIO.observe($('trail'));
+if (reduce) $('trail').classList.add('in');
+
+// research list
+$('projects').innerHTML = RESEARCH.map((r, i) => `
+  <details class="proj"${i === 0 ? ' open' : ''}>
+    <summary>
+      <span class="n">${String(i + 1).padStart(2, '0')}</span>
+      <h3>${esc(r.title)}<span class="short">${esc(r.short)}</span></h3>
+      <span class="role">${esc(r.role)}</span>
+    </summary>
+    <div class="body">
+      <div class="prose"><p>${esc(r.text)}</p></div>
+      <p class="methods"><b>Methods:</b> ${esc(r.methods)}</p>
+    </div>
+  </details>`).join('');
+
+// teaching
+$('units').innerHTML = UNITS.map(u => `<div class="course"><span class="code">${esc(u.code)}</span><b>${esc(u.name)}</b><span class="lvl">${esc(u.level)}</span><p>${esc(u.about)}</p></div>`).join('');
+
+// conference tickets
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const BRIDGE = '<svg class="bridge" viewBox="0 0 160 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M2 30H158"/><path d="M10 30 40 8 62 26M98 26 120 8 150 30"/><path d="M62 26Q80 22 98 26"/><path d="M40 8V38M120 8V38"/><path d="M22 30 30 20 40 30 50 21 58 30M102 30 110 21 120 30 130 20 138 30" stroke-width="1.2"/></svg>';
+(function(){
+  const now = new Date(), nowKey = now.getFullYear() * 12 + now.getMonth() + 1;
+  $('tickets').innerHTML = CONFERENCES.map(c => {
+    const upcoming = c.year * 12 + c.month > nowKey;
+    const route = c.home
+      ? `<div class="route"><b>BNE</b>${BRIDGE}</div><div class="cities"><span>${esc(c.city)}</span><span>${esc(c.venue || 'Home ground')}</span></div>`
+      : `<div class="route"><b>${esc(c.from)}</b><span class="line"></span><b>${esc(c.to)}</b></div><div class="cities"><span>${esc(c.fromCity)}</span><span>${esc(c.toCity)}</span></div>`;
+    return `<article class="ticket${c.home ? ' home' : ''}">
+      <div class="main">
+        <div class="top"><span>${c.home ? 'Home ground · Brisbane' : 'Boarding pass · Haneen'}</span>${upcoming ? '<span class="soon">Upcoming</span>' : ''}</div>
+        ${route}
+        <div class="event">${esc(c.event)}</div>
+        ${c.title ? `<div class="title">${esc(c.title)}</div>` : ''}
+        ${c.about ? `<div class="blurb">${esc(c.about)}</div>` : ''}
+        ${[].concat(c.highlight || []).filter(Boolean).map(h => `<div class="high">${esc(h)}</div>`).join('')}
+        <div class="meta"><div>Date<b>${MONTHS[c.month - 1]} ${c.year}</b></div><div>Presenting<b>${esc(c.type)}</b></div></div>
+      </div>
+      <div class="stub">${c.home ? '' : '<span>Admit one</span>'}</div>
+    </article>`;
+  }).join('');
+})();
+
+// whales: preview + full gallery
+WHALES.slice(0, 4).forEach(w => { const ph = document.createElement('div'); ph.className = 'ph'; $('peek').appendChild(ph); fillPh(ph, w.src, w.caption, false); ph.onclick = openOcean; ph.style.cursor = 'pointer'; });
+WHALES.forEach((w, i) => {
+  const f = document.createElement('figure');
+  f.style.animationDelay = (i * 0.12) + 's';
+  f.innerHTML = `<div class="ph"></div><figcaption>${esc(w.caption)}</figcaption>`;
+  $('pod').appendChild(f); fillPh(f.querySelector('.ph'), w.src, w.caption);
+});
+const ocean = $('ocean');
+function openOcean(){ ocean.classList.add('open'); document.body.style.overflow = 'hidden'; $('closeOcean').focus(); }
+function closeOcean(){ ocean.classList.remove('open'); document.body.style.overflow = ''; }
+$('openOcean').onclick = openOcean;
+$('closeOcean').onclick = closeOcean;
+
+// lightbox
+const lb = $('lightbox');
+function openLightbox(src, alt){ lb.querySelector('img').src = src; lb.querySelector('img').alt = alt || ''; lb.classList.add('open'); }
+lb.onclick = () => lb.classList.remove('open');
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (lb.classList.contains('open')) lb.classList.remove('open'); else closeOcean(); } });
+
+// links
+$('links').innerHTML = LINKS.map(l => `<a href="${esc(l.url)}"${l.url.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}><span class="k">${esc(l.label)}</span><span class="v">${esc(l.value)}</span><span class="arr">→</span></a>`).join('');
+
+// the lamp = light / dark mode
+const root = document.documentElement;
+try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch(e){}
+function toggleLamp(){
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch(e){}
+}
+$('lights').onclick = toggleLamp;
+
+// desk lamp: lights up the photo and reveals the other dots
+const desk = $('desk');
+function deskLamp(){
+  const on = desk.classList.toggle('on');
+  desk.querySelector('[data-lamp]').setAttribute('aria-pressed', on);
+  $('lampLabel').textContent = on ? 'Switch off the lamp' : 'Switch on the lamp';
+  $('deskHint').textContent = on ? 'Tap the dots to look around.' : "It's a bit dark in here. Try the lamp.";
+}
+
+// desk hotspots
+document.querySelectorAll('.desk .spot').forEach(s => s.onclick = () => {
+  if (s.dataset.go) go(s.dataset.go);
+  else if ('whales' in s.dataset) openOcean();
+  else if ('lamp' in s.dataset) deskLamp();
+});
+
+// fade-in on scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.rise').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
